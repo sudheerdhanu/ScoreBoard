@@ -1,0 +1,51 @@
+{% extends 'home.html' %}
+
+  {% block head%}
+      <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 60%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 10px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    {% endblock%}
+{% block content%}
+<center>
+<h2> Team Name with list of players</h2>
+<table>
+
+    <tr>
+
+        <th>Player Names</th>
+        <th>Player Logo</th>
+        <th>Team Name</th>
+        <th>Player Jersy Number</th>
+
+    </tr>
+
+
+
+    {% for list in players %}
+        <tr>
+            <td>{{  list.first_name}}</td>
+            <td><img src="{{ list.player_image.url }}" alt="Jane" style="width:10%"></td>
+            <td>{{  list.team.name}}</td>
+            <td>{{ list.player_jersy_number }}</td>
+
+        </tr>
+    {% endfor %}
+
+
+</table>
+</center>
+{% endblock%}

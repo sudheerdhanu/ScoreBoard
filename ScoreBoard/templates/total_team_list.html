@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% extends 'home.html' %}
+
+  {% block head%}
+      <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 40%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    {% endblock%}
+{% block content%}
+<center>
+<table>
+    <tr>
+        <th>Team Names</th>
+        <th>Team Logo</th>
+        <th>Team Points</th>
+
+
+    </tr>
+
+
+    {% for list in list %}
+        <tr>
+            <td><a href="{% url 'team_detail' list.identifier %}">{{ list.name }}</a></td>
+            <td><img src="{{ list.logo_url.url }}" alt="Jane" style="width:10%"></td>
+            <td>{{ list.points }}</td>
+
+        </tr>
+    {% endfor %}
+
+
+</table>
+</center>
+{% endblock%}
