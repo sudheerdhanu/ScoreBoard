@@ -1,18 +1,18 @@
 # ScoreBoard
 
-# Usage
+ Usage
 
 It's best to install Python projects in a Virtual Environment. Once you have set up a VE, clone this project
 
 https://github.com/sudheerdhanu/ScoreBoard.git
 
-#Then
+Then
 
 cd ScoreBoard
 
 check manage.py file and there commands
 
-#Run
+Run
 
 pip install -r requirements.txt #install required packages
 python manange.py migrate # run first migration
